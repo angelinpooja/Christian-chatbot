@@ -13,12 +13,13 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom CSS for spiritual design
+# Custom CSS for spiritual design - FIXED TEXT COLOR ISSUE
 st.markdown("""
 <style>
     .main {
         background: linear-gradient(135deg, #f9f7f0 0%, #e8f4f8 100%);
         font-family: 'Georgia', serif;
+        color: #000000 !important; /* Added to ensure text visibility */
     }
     .header {
         text-align: center;
@@ -58,10 +59,12 @@ st.markdown("""
     .stChatMessage.user {
         background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
         border-left: 5px solid #1976d2;
+        color: #000000 !important; /* Added for text visibility */
     }
     .stChatMessage.assistant {
         background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
         border-left: 5px solid #7b1fa2;
+        color: #000000 !important; /* Added for text visibility */
     }
     .stChatInput {
         border-radius: 25px;
@@ -96,6 +99,10 @@ st.markdown("""
         box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         margin: 2rem 0;
         text-align: center;
+    }
+    /* Force text color in all elements */
+    .stMarkdown, .stText, .stChatMessage p, .stChatMessage div {
+        color: #000000 !important;
     }
 </style>
 """, unsafe_allow_html=True)
